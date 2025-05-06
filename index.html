@@ -109,8 +109,7 @@ function fixUrl(url) {
 }
 
 const urlParams = new URLSearchParams(location.search);
-// const sqliteUrl = fixUrl(urlParams.get('url'));
-const sqliteUrl = "renewals.db"; // Pointing to your SQLite file directly
+const sqliteUrl = fixUrl(urlParams.get('url'));
 const memory = !!urlParams.get('memory');
 const metadataUrl = fixUrl(urlParams.get('metadata'));
 const csvUrls = urlParams.getAll('csv').map(fixUrl);
@@ -120,12 +119,7 @@ const parquetUrls = urlParams.getAll('parquet').map(fixUrl);
 const installUrls = urlParams.getAll('install');
 const ref = urlParams.get('ref');
 
-// datasetteWorker.postMessage({type: 'startup', ref, sqliteUrl, memory, csvUrls, sqlUrls, jsonUrls, parquetUrls, installUrls, metadataUrl});
-datasetteWorker.postMessage({
-  type: 'startup',
-  sqliteUrl: "renewals.db", // Database file URL
-  metadataUrl: "metadata.json", // Optional metadata file (if available)
-});
+datasetteWorker.postMessage({type: 'startup', ref, sqliteUrl, memory, csvUrls, sqlUrls, jsonUrls, parquetUrls, installUrls, metadataUrl});
 
 let loadingLogs = ["Loading..."];
 
@@ -320,14 +314,5 @@ fileTypes.forEach((fileType) => {
 });
 
 </script>
-
-<script>
-  // Allow the user to load the database
-  const loadDbButton = document.querySelector("button.db-url");
-  loadDbButton.addEventListener("click", function() {
-    location.href = `?url=${encodeURIComponent("renewals.db")}`;
-  });
-</script>
-
 </body>
 </html>
