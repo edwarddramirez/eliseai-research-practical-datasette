@@ -1,18 +1,9 @@
 {
   "resident_database": {
-    "hash": "e1ac06f20649d4dbdb38a35f1edfed34a0da5a01e4a7fdf4634604c84da544df",
-    "size": 2007040,
+    "hash": "9edc7157aa0c0d3c43fbba167a8ede3114e6fc8825cc7b11ef241039af337d6d",
+    "size": 618496,
     "file": "resident_database.db",
     "tables": {
-      "conversations_train": {
-        "count": 803
-      },
-      "sqlite_sequence": {
-        "count": 2
-      },
-      "conversations_test": {
-        "count": 197
-      },
       "residents_train": {
         "count": 803
       },
