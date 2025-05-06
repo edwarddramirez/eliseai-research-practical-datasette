@@ -1,8 +1,8 @@
 {
-  "resident_database": {
+  "renewals": {
     "hash": "e1ac06f20649d4dbdb38a35f1edfed34a0da5a01e4a7fdf4634604c84da544df",
     "size": 2007040,
-    "file": "resident_database.db",
+    "file": "renewals.db",
     "tables": {
       "conversations_train": {
         "count": 803
